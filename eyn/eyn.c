@@ -44,6 +44,19 @@ int main(int argc, char** argv){
 
 	int argv_value[3];
 
+	if(argc < 9 && argc != 1){
+		printf("you should enter more items!");
+		return 0;
+	}
+	if(argc > 9){
+		printf("you enter very items!");
+		return 0;
+	}
+	if(argc == 1){
+		printf("done!\n");
+		goto mainfunc;
+	}
+
 	for(int i = 1;i < argc;i++){
 		if(! strcmp(argv[i], "-fname_in")){
 			strcpy(fname_in, argv[i+1]);
@@ -56,12 +69,12 @@ int main(int argc, char** argv){
 			}
 
 			printf("done.\n");
+			fclose(valid_file);
 		}else if(! strcmp(argv[i], "-fname_out")){
 			printf("done.\n");
 			strcpy(fname_out, argv[i+1]);
 			printf("%s\n", fname_out);
 			argv_value[1] = 1;
-			//return 0;
 		}else if(! strcmp(argv[i], "-key1")){
 			key1 = atoi(argv[i+1]);
 
@@ -85,17 +98,13 @@ int main(int argc, char** argv){
 		}
 	}
 
-	fclose(valid_file);
-
 	if(argv_value[0] == 1 || argv_value[1] == 1 || argv_value[2] == 1 || argv_value[2] == 1){
-		//return 0;
 		goto encrypt;
 	}
-	/*for(int i = 0;i <= 3;i++){
-		argv_value[i] == 1;
-	}*/
 
 	error_file1:
+
+	mainfunc:
 
 	printf("enter the file name that you want to encrypt:");
 	scanf("%s", &fname_in);
