@@ -46,11 +46,16 @@ int main(int argc, char** argv){
 
 	for(int i = 1;i < argc;i++){
 		if(! strcmp(argv[i], "-fname_in")){
-			printf("done.\n");
 			strcpy(fname_in, argv[i+1]);
-			printf("%s\n", fname_in);
+			valid_file = fopen(fname_in, "rb");
 			argv_value[0] = 1;
-			//return 0;
+
+			if(!valid_file){
+				printf("the file you enter is not valid!");
+				return 0;
+			}
+
+			printf("done.\n");
 		}else if(! strcmp(argv[i], "-fname_out")){
 			printf("done.\n");
 			strcpy(fname_out, argv[i+1]);
@@ -58,19 +63,29 @@ int main(int argc, char** argv){
 			argv_value[1] = 1;
 			//return 0;
 		}else if(! strcmp(argv[i], "-key1")){
-			printf("done\n");
-			//strcpy(key1, argv[i+1]);
-			//printf("\n", );
 			key1 = atoi(argv[i+1]);
-			printf("%d\n", key1);
+
+			if(key1 <= 0){
+				printf("enter a valid password, you should enter password greater than 0!");
+				return 0;
+			}
+
+			printf("done.\n");
 			argv_value[2] = 1;
 		}else if(! strcmp(argv[i], "-key2")){
-			printf("done\n");
 			key2 = atoi(argv[i+1]);
-			printf("%d\n", key2);
+
+			if(key2 <= 0){
+				printf("enter a valid password, you should enter password greater than 0!");
+				return 0;
+			}
+
+			printf("done.\n");
 			argv_value[3] = 1;
 		}
 	}
+
+	fclose(valid_file);
 
 	if(argv_value[0] == 1 || argv_value[1] == 1 || argv_value[2] == 1 || argv_value[2] == 1){
 		//return 0;
@@ -121,7 +136,7 @@ int main(int argc, char** argv){
 	FILE *fptr;
 
 	encrypt:
-	
+
 	fptr = fopen(fname_in, "rb");
 	char data[MAX_SIZE];
 	int i = 0;
