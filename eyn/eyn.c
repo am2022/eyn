@@ -187,5 +187,20 @@ int main(int argc, char** argv){
 
 	pass_save(key1, key2);
 
+	char menu[4];
+
+	error_menu:
+
+	printf("enter no for exit or enter yes to return to the eyn:");
+	scanf("%s", &menu);
+
+	if(! strcmp(menu, "yes") || ! strcmp(menu, "y") || ! strcmp(menu, "Y")){
+		goto mainfunc;
+	}else if(! strcmp(menu, "no") || ! strcmp(menu, "n") || ! strcmp(menu, "N")){
+		return 0;
+	}else{
+		printf("invalid option, enter again!\n");
+		goto error_menu;
+	}
 	return 0;
 }
