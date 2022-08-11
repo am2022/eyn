@@ -53,7 +53,6 @@ int main(int argc, char** argv){
 		return 0;
 	}
 	if(argc == 1){
-		printf("done!\n");
 		goto mainfunc;
 	}
 
@@ -106,8 +105,13 @@ int main(int argc, char** argv){
 
 	mainfunc:
 
+	printf("enter q for exit.\n");
 	printf("enter the file name that you want to encrypt:");
 	scanf("%s", &fname_in);
+
+	if(! strcmp(fname_in, "q")){
+		return 0;
+	}
 
 	valid_file = fopen(fname_in, "rb");
 	if(!valid_file){
@@ -117,15 +121,25 @@ int main(int argc, char** argv){
 
 	fclose(valid_file);
 
+	printf("enter q for exit.\n");
 	printf("enter the file name that you want to export:");
 	scanf("%s", &fname_out);
+
+	if(! strcmp(fname_out, "q")){
+		return 0;
+	}
 
 	/*printf("how many keys (passwords) you want to set:");
 	scanf("%d", &numkey);*/
 	error_wrongpass1:
 
+	printf("enter 00 for exit.\n");
 	printf("enter the key1 (password1) for the file in decimal number:");
 	scanf("%d",&key1);
+
+	if(key1 == 00){
+		return 0;
+	}
 
 	if(key1 <= 0){
 		printf("the password should be greater than 0!\n");
@@ -134,8 +148,13 @@ int main(int argc, char** argv){
 
 	error_wrongpass2:
 
+	printf("enter 00 for exit.\n");
 	printf("enter the key2 (password2) for the file in decimal number:");
 	scanf("%d",&key2);
+
+	if(key1 == 00){
+		return 0;
+	}
 
 	if(key2 <= 0){
 		printf("the password should be greater than 0!\n");
