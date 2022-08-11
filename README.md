@@ -1,2 +1,2 @@
 # eyn is an encryption software
-## for help got to the eyn/README.md
+## for help, go to the eyn/README.md
