@@ -4,6 +4,14 @@
 
 #define MAX_SIZE (1024*1024)
 
+#if defined(_WIN32)
+    #define PLATFORM "win"
+#elif defined(__linux__)
+	#define PLATFORM "linux"
+#else
+	#define PLATFORM "unix"
+#endif
+
 void pass_save_txt(char fname[30], int p1, int p2){
 	FILE *pass_save;
 	pass_save = fopen(fname, "wb");
@@ -155,12 +163,18 @@ int main(int argc, char** argv){
 
 	mainfunc:
 
-	printf("enter q for exit.\n");
+	printf("enter -q for exit || enter -clear for clear the screen\n");
 	printf("enter the file name that you want to encrypt:");
 	scanf("%s", &fname_in);
 
-	if(! strcmp(fname_in, "q")){
+	if(! strcmp(fname_in, "-q")){
 		return 0;
+	}else if(! strcmp(PLATFORM, "win")){
+		system("cls");
+		goto mainfunc;
+	}else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
+		system("clear");
+		goto mainfunc;
 	}
 
 	valid_file = fopen(fname_in, "rb");
@@ -171,12 +185,16 @@ int main(int argc, char** argv){
 
 	fclose(valid_file);
 
-	printf("enter q for exit.\n");
+	printf("enter -q for exit || enter -clear for clear the screen\n");
 	printf("enter the file name that you want to export:");
 	scanf("%s", &fname_out);
 
-	if(! strcmp(fname_out, "q")){
+	if(! strcmp(fname_out, "-q")){
 		return 0;
+	}else if(! strcmp(PLATFORM, "win")){
+		system("cls");
+	}else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
+		system("clear");
 	}
 
 	/*printf("how many keys (passwords) you want to set:");
