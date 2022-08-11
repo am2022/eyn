@@ -4,6 +4,50 @@
 
 #define MAX_SIZE (1024*1024)
 
+void pass_save_txt(char fname[30], int p1, int p2){
+	FILE *pass_save;
+	pass_save = fopen(fname, "wb");
+
+	fprintf(pass_save, "password1:%d\npassword2:%d", p1, p2);
+
+	fclose(pass_save);
+
+	printf("done!\n");
+}
+
+void pass_save_html(char fname[30], int p1, int p2){
+	FILE *pass_save;
+
+	pass_save = fopen(fname, "wb");
+
+	fprintf(pass_save, "<html>\n");
+	fprintf(pass_save, "<head>\n");
+	fprintf(pass_save, "<title>eyn passwords</title>\n");
+	fprintf(pass_save, "</head>\n");
+	fprintf(pass_save, "<body>\n");
+	fprintf(pass_save, "<h1>password1:%d</h1>\n", p1);
+	fprintf(pass_save, "<h1>password2:%d</h1>\n", p2);
+	fprintf(pass_save, "</body>\n");
+	fprintf(pass_save, "</html>");
+
+	fclose(pass_save);
+
+	printf("done!\n");
+}
+
+void pass_save_md(char fname[30], int p1, int p2){
+	FILE *pass_save;
+
+	pass_save = fopen(fname, "wb");
+
+	fprintf(pass_save, "## password1:%d\n", p1);
+	fprintf(pass_save, "## password2:%d\n", p2);
+
+	fclose(pass_save);
+
+	printf("done!\n");
+}
+
 int pass_save(int p1,int p2){
 	char pass_choice;
 	char pass_file_name[30];
@@ -16,50 +60,20 @@ int pass_save(int p1,int p2){
 	scanf(" %c", &pass_choice);
 
 	if(pass_choice == '1'){
-		FILE *pass_save;
-
 		printf("enter the name of your password file you want to export:\n");
 		scanf("%s", &pass_file_name);
 
-		pass_save = fopen(pass_file_name, "wb");
-
-		fprintf(pass_save, "password1:%d\npassword2:%d", p1, p2);
-
-		fclose(pass_save);
-		printf("done!\n");
+		pass_save_txt(pass_file_name, p1, p2);
 	}else if(pass_choice == '2'){
-		FILE *pass_save;
-
 		printf("enter the name of your password file you want to export(.html):\n");
 		scanf("%s", &pass_file_name);
 
-		pass_save = fopen(pass_file_name, "wb");
-
-		fprintf(pass_save, "<html>\n");
-		fprintf(pass_save, "<head>\n");
-		fprintf(pass_save, "<title>eyn passwords</title>\n");
-		fprintf(pass_save, "</head>\n");
-		fprintf(pass_save, "<body>\n");
-		fprintf(pass_save, "<h1>password1:%d</h1>\n", p1);
-		fprintf(pass_save, "<h1>password2:%d</h1>\n", p2);
-		fprintf(pass_save, "</body>\n");
-		fprintf(pass_save, "</html>");
-
-		fclose(pass_save);
-		printf("done!\n");
+		pass_save_html(pass_file_name, p1, p2);
 	}else if(pass_choice == '3'){
-		FILE *pass_save;
-
 		printf("enter the name of your password file you want to export(.md):\n");
 		scanf("%s", &pass_file_name);
 
-		pass_save = fopen(pass_file_name, "wb");
-
-		fprintf(pass_save, "## password1:%d\n", p1);
-		fprintf(pass_save, "## password2:%d\n", p2);
-
-		fclose(pass_save);
-		printf("done!\n");
+		pass_save_md(pass_file_name, p1, p2);
 	}else if(pass_choice == 'n'){
 		return 0;
 	}else{
