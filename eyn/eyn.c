@@ -169,13 +169,15 @@ int main(int argc, char** argv){
 
 	if(! strcmp(fname_in, "-q")){
 		return 0;
-	}else if(! strcmp(PLATFORM, "win")){
-		system("cls");
-		goto mainfunc;
-	}else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
-		system("clear");
-		goto mainfunc;
-	}
+	}else if(! strcmp(fname_in, "-clear")){
+        if(! strcmp(PLATFORM, "win")){
+    		system("cls");
+    		goto mainfunc;
+    	}else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
+    		system("clear");
+    		goto mainfunc;
+    	}
+    }
 
 	valid_file = fopen(fname_in, "rb");
 	if(!valid_file){
@@ -185,17 +187,23 @@ int main(int argc, char** argv){
 
 	fclose(valid_file);
 
+    export:
+
 	printf("enter -q for exit || enter -clear for clear the screen\n");
 	printf("enter the file name that you want to export:");
 	scanf("%s", &fname_out);
 
 	if(! strcmp(fname_out, "-q")){
 		return 0;
-	}else if(! strcmp(PLATFORM, "win")){
-		system("cls");
-	}else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
-		system("clear");
-	}
+	}else if(! strcmp(fname_out, "-clear")){
+        if(! strcmp(PLATFORM, "win")){
+    		system("cls");
+            goto export;
+    	}else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
+    		system("clear");
+            goto export;
+    	}
+    }
 
 	/*printf("how many keys (passwords) you want to set:");
 	scanf("%d", &numkey);*/
