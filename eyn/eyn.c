@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "color.h"
 
 #define MAX_SIZE (1024*1024)
 
@@ -103,11 +102,15 @@ int main(int argc, char** argv){
 
 	int argv_value[3];
 
-	if(argc < 9 && argc != 1){
+    char txt_out[30];
+    char md_out[30];
+    char html_out[30];
+
+	if(argc < 11 && argc != 1){
 		printf("you should enter more items!");
 		return 0;
 	}
-	if(argc > 9){
+	if(argc > 12){
 		printf("you enter very items!");
 		return 0;
 	}
@@ -153,7 +156,11 @@ int main(int argc, char** argv){
 
 			printf("done.\n");
 			argv_value[3] = 1;
-		}
+		}else if(! strcmp(argv[i], "-txt_o")){
+            strcpy(txt_out, argv[i+1]);
+
+            pass_save_txt(txt_out, key1, key2);
+        }
 	}
 
 	if(argv_value[0] == 1 || argv_value[1] == 1 || argv_value[2] == 1 || argv_value[2] == 1){
@@ -261,6 +268,10 @@ int main(int argc, char** argv){
 	}
 
 	fclose(fptr);
+
+    if(argv_value[0] == 1 || argv_value[1] == 1 || argv_value[2] == 1 || argv_value[2] == 1){
+		return 0;
+	}
 
 	pass_save(key1, key2);
 
