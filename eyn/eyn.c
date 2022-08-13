@@ -164,7 +164,7 @@ int main(int argc, char** argv){
 
 	mainfunc:
 
-	printf("enter -q for exit || enter -clear for clear the screen || enter -color for change color\n");
+	printf("enter -q for exit || enter -clear for clear the screen\n");
 	printf("enter the file name that you want to encrypt:");
 	scanf("%s", &fname_in);
 
@@ -178,13 +178,6 @@ int main(int argc, char** argv){
     		system("clear");
     		goto mainfunc;
     	}
-    }else if(! strcmp(fname_in, "-color")){
-        if(! strcmp(PLATFORM, "win")){
-            color("win");
-        }else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
-            color("unix");
-        }
-        goto mainfunc;
     }
 
 	valid_file = fopen(fname_in, "rb");
