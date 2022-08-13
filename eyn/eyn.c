@@ -110,7 +110,7 @@ int main(int argc, char** argv){
 		printf("you should enter more items!");
 		return 0;
 	}
-	if(argc > 12){
+	if(argc > 14){
 		printf("you enter very items!");
 		return 0;
 	}
@@ -160,6 +160,10 @@ int main(int argc, char** argv){
             strcpy(txt_out, argv[i+1]);
 
             pass_save_txt(txt_out, key1, key2);
+        }else if(! strcmp(argv[i], "-md_o")){
+            strcpy(md_out, argv[i+1]);
+
+            pass_save_md(md_out, key1, key2);
         }
 	}
 
