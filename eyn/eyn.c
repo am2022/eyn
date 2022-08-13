@@ -110,7 +110,7 @@ int main(int argc, char** argv){
 		printf("you should enter more items!");
 		return 0;
 	}
-	if(argc > 14){
+	if(argc > 15){
 		printf("you enter very items!");
 		return 0;
 	}
@@ -164,6 +164,10 @@ int main(int argc, char** argv){
             strcpy(md_out, argv[i+1]);
 
             pass_save_md(md_out, key1, key2);
+        }else if(! strcmp(argv[i], "-html_o")){
+            strcpy(html_out, argv[i+1]);
+
+            pass_save_html(html_out, key1, key2);
         }
 	}
 
