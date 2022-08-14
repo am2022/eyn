@@ -13,3 +13,8 @@
 * enter -key1 and after the space and then enter the key1(password1) that you want
 * enter -key2 and after the space and then enter the key2(password2) that you want
 * example: ./eyn -fname_in file.txt -fname_out file.txt -key1 10 -key2 20
+
+## how to use argv for save passwords in eyn:
+* you can use -txt_o and put the name of file that you want to see the output in txt format, that will give you your password that you enter for encryption.
+* for html format you can use -html_o and the file name.
+* and for md(markdown) format you can use -md_o and after the file name.
