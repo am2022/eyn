@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <time.h>
 #include "eyn_time.h"
 
 #define MAX_SIZE (1024*1024)
@@ -26,10 +25,13 @@ void pass_save_txt(char fname[30], int p1, int p2){
 }
 
 void pass_save_html(char fname[30], int p1, int p2){
-	time_t tm;
-	time(&tm);
+    int e_year;
+    int e_month;
+    int e_day;
 
-	struct tm *date = localtime(&tm);
+    e_year = year();
+    e_month = month();
+    e_day = day();
 
 	FILE *pass_save;
 
@@ -41,7 +43,7 @@ void pass_save_html(char fname[30], int p1, int p2){
 	fprintf(pass_save, "</head>\n");
 	fprintf(pass_save, "<body>\n");
 	fprintf(pass_save, "<h1 style=\"text-align:center;\">eyn password</h1>");
-	fprintf(pass_save, "<h1 style=\"text-align:center;\">date: %d / %d / %d</h1>", date->tm_mon + 1, date->tm_mday ,date->tm_year + 1900);
+	fprintf(pass_save, "<h1 style=\"text-align:center;\">date: %d / %d / %d</h1>", e_month, e_day, e_year);
 	fprintf(pass_save, "<hr>");
 	fprintf(pass_save, "<h1>password1:%d</h1>\n", p1);
 	fprintf(pass_save, "<h1>password2:%d</h1>\n", p2);
