@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include "eyn_time.h"
 
 #define MAX_SIZE (1024*1024)
 
@@ -115,6 +116,14 @@ int main(int argc, char** argv){
     char md_out[30];
     char html_out[30];
 
+    int e_year;
+    int e_month;
+    int e_day;
+
+    e_year = year();
+    e_month = month();
+    e_day = day();
+
 	if(argc < 11 && argc != 1){
 		printf("you should enter more items!");
 		return 0;
@@ -187,6 +196,8 @@ int main(int argc, char** argv){
 	error_file1:
 
 	mainfunc:
+
+    printf("date: %d / %d / %d\n", e_month, e_day, e_year);
 
 	printf("enter -q for exit || enter -clear for clear the screen\n");
 	printf("enter the file name that you want to encrypt:");
