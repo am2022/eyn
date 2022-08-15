@@ -4,7 +4,7 @@
 ## how to install eyn:
 * first you should clone the project
 * you should install gcc
-* and then use gcc eyn.c -std=c99 -o eyn for execute the code, and for windows use gcc eyn.c -std=c99 -o eyn.exe command.
+* and then use gcc eyn.c -std=c11 -o eyn for execute the code, and for windows use gcc eyn.c -std=c99 -o eyn.exe command.
 
 ## how to use argv in eyn:
 * first you should run program by ./eyn (or each file name that you save).
@@ -18,3 +18,4 @@
 * you can use -txt_o and put the name of file that you want to see the output in txt format, that will give you your password that you enter for encryption.
 * for html format you can use -html_o and the file name.
 * and for md(markdown) format you can use -md_o and after the file name.
+* example: ./eyn -fname_in file.txt -fname_out file.txt -key1 10 -key2 20 -html_o h.html -md_o md.md -txt_o txt.txt
