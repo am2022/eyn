@@ -14,9 +14,18 @@
 #endif
 
 void pass_save_txt(char fname[30], int p1, int p2){
+    int e_year;
+    int e_month;
+    int e_day;
+
+    e_year = year();
+    e_month = month();
+    e_day = day();
+
 	FILE *pass_save;
 	pass_save = fopen(fname, "wb");
 
+    fprintf(pass_save, "date: %d / %d / %d\n", e_month, e_day, e_year);
 	fprintf(pass_save, "password1:%d\npassword2:%d", p1, p2);
 
 	fclose(pass_save);
