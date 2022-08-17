@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "eyn_time.h"
 
-#define MAX_SIZE (1024*1024)
+#define MAX_SIZE (1024*1024*5)
 
 #if defined(_WIN32)
     #define PLATFORM "win"
@@ -298,7 +298,8 @@ int main(int argc, char** argv){
 	encrypt:
 
 	fptr = fopen(fname_in, "rb");
-	char data[MAX_SIZE];
+    char *data;
+    data = malloc(MAX_SIZE);
 	int i = 0;
 
 	while(!feof(fptr)){
@@ -316,6 +317,8 @@ int main(int argc, char** argv){
 	}
 
 	fclose(fptr);
+
+    free(data);
 
     if(argv_value[0] == 1 || argv_value[1] == 1 || argv_value[2] == 1 || argv_value[2] == 1){
 		return 0;
