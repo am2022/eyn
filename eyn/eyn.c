@@ -207,7 +207,7 @@ int main(int argc, char** argv){
             strcpy(html_out, argv[i+1]);
 
             pass_save_html(html_out, key1, key2);
-        }else if(! strcmp(argv[i], "--help")){
+        }else if(! strcmp(argv[i], "--help") || ! strcmp(argv[i], "-help") || ! strcmp(argv[i], "-h")){
             argv_help();
             return 0;
         }
