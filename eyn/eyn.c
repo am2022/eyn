@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "eyn_time.h"
+#include "help.h"
 
 #define MAX_SIZE (1024*1024*5)
 
@@ -144,7 +145,7 @@ int main(int argc, char** argv){
     e_month = month();
     e_day = day();
 
-	if(argc < 7 && argc != 1){
+	if(argc < 2 && argc != 1){
 		printf("you should enter more items!");
 		return 0;
 	}
@@ -206,6 +207,9 @@ int main(int argc, char** argv){
             strcpy(html_out, argv[i+1]);
 
             pass_save_html(html_out, key1, key2);
+        }else if(! strcmp(argv[i], "--help")){
+            argv_help();
+            return 0;
         }
 	}
 
