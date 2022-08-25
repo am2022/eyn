@@ -144,7 +144,7 @@ int main(int argc, char** argv){
     e_month = month();
     e_day = day();
 
-	if(argc < 11 && argc != 1){
+	if(argc < 7 && argc != 1){
 		printf("you should enter more items!");
 		return 0;
 	}
@@ -157,7 +157,7 @@ int main(int argc, char** argv){
 	}
 
 	for(int i = 1;i < argc;i++){
-		if(! strcmp(argv[i], "-fname_in")){
+		if(! strcmp(argv[i], "-fname_in") || ! strcmp(argv[i], "-i")){
 			strcpy(fname_in, argv[i+1]);
 			valid_file = fopen(fname_in, "rb");
 			argv_value[0] = 1;
@@ -169,12 +169,12 @@ int main(int argc, char** argv){
 
 			printf("done.\n");
 			fclose(valid_file);
-		}else if(! strcmp(argv[i], "-fname_out")){
+		}else if(! strcmp(argv[i], "-fname_out") || ! strcmp(argv[i], "-o")){
 			printf("done.\n");
 			strcpy(fname_out, argv[i+1]);
 			printf("%s\n", fname_out);
 			argv_value[1] = 1;
-		}else if(! strcmp(argv[i], "-key1")){
+		}else if(! strcmp(argv[i], "-key1") || ! strcmp(argv[i], "-k1")){
 			key1 = atoi(argv[i+1]);
 
 			if(key1 <= 0){
@@ -184,7 +184,7 @@ int main(int argc, char** argv){
 
 			printf("done.\n");
 			argv_value[2] = 1;
-		}else if(! strcmp(argv[i], "-key2")){
+		}else if(! strcmp(argv[i], "-key2") || ! strcmp(argv[i], "-k2")){
 			key2 = atoi(argv[i+1]);
 
 			if(key2 <= 0){
