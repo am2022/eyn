@@ -8,10 +8,10 @@
 
 ## how to use argv in eyn:
 * first you should run program by ./eyn (or each file name that you save).
-* after that in the same line for enter file name that you want to encrypt you should use -fname_in and after that a space and then enter your file name.
-* in the same line enter -fname_out is for enter output file name, after that space and then enter your output file name.
-* enter -key1 and after the space and then enter the key1(password1) that you want
-* enter -key2 and after the space and then enter the key2(password2) that you want
+* after that in the same line for enter file name that you want to encrypt you should use -fname_in or -i and after that a space and then enter your file name.
+* in the same line enter -fname_out or -o is for enter output file name, after that space and then enter your output file name.
+* enter -key1 or -k1 and after the space and then enter the key1(password1) that you want
+* enter -key2 or -k2 and after the space and then enter the key2(password2) that you want
 * example: ./eyn -fname_in file.txt -fname_out file.txt -key1 10 -key2 20
 
 ## how to use argv for save passwords in eyn:
