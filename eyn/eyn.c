@@ -288,7 +288,7 @@ int main(int argc, char** argv){
 	printf("enter the key2 (password2) for the file in decimal number:");
 	scanf("%d",&key2);
 
-	if(key1 == 00){
+	if(key2 == 00){
 		return 0;
 	}
 
