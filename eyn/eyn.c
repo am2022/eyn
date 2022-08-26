@@ -131,6 +131,9 @@ int main(int argc, char** argv){
 	int key1;
 	int key2;
 
+    char s_key1[30];
+    char s_key2[30];
+
 	int argv_value[3];
 
     char txt_out[30];
@@ -271,11 +274,13 @@ int main(int argc, char** argv){
 
 	printf("enter 00 for exit.\n");
 	printf("enter the key1 (password1) for the file in decimal number:");
-	scanf("%d",&key1);
+    scanf("%s", &s_key1);
 
-	if(key1 == 00){
+	if(! strcmp(s_key1, "00")){
 		return 0;
 	}
+
+    key1 = atoi(s_key1);
 
 	if(key1 <= 0){
 		printf("the password should be greater than 0!\n");
@@ -286,11 +291,13 @@ int main(int argc, char** argv){
 
 	printf("enter 00 for exit.\n");
 	printf("enter the key2 (password2) for the file in decimal number:");
-	scanf("%d",&key2);
+    scanf("%s", &s_key2);
 
-	if(key2 == 00){
+	if(! strcmp(s_key2, "00")){
 		return 0;
 	}
+
+    key2 = atoi(s_key2);
 
 	if(key2 <= 0){
 		printf("the password should be greater than 0!\n");
