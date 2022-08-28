@@ -107,9 +107,11 @@ int pass_save(char *s_p1, char *s_p2){
     int p1 = atoi(s_p1);
     int p2 = atoi(s_p2);
 
+    printf("\n");
 	printf("for save password to a file enter 1\n");
 	printf("for save password as html file enter 2\n");
 	printf("for save password as md file enter 3\n");
+    printf("for save password as key file for importing it another time enter 4\n");
 	printf("and for no option enter n\n");
 	printf(":");
 	scanf(" %c", &pass_choice);
@@ -129,7 +131,12 @@ int pass_save(char *s_p1, char *s_p2){
 		scanf("%s", &pass_file_name);
 
 		pass_save_md(pass_file_name, p1, p2);
-	}else if(pass_choice == 'n'){
+	}else if(pass_choice == '4'){
+        printf("enter the name of your password file you want to export(.key):\n");
+        scanf("%s", &pass_file_name);
+
+        pass_save_key(pass_file_name, p1, p2);
+    }else if(pass_choice == 'n'){
 		return 0;
 	}else{
 		printf("invalid option, please enter again!\n");
