@@ -87,6 +87,19 @@ void pass_save_md(char fname[30], int p1, int p2){
 	printf("done!\n");
 }
 
+void pass_save_key(char fname[30], int p1, int p2){
+    FILE *pass_save;
+
+    pass_save = fopen(fname, "wb");
+
+    fprintf(pass_save, "%d\n", p1);
+    fprintf(pass_save, "%d\n", p2);
+
+    fclose(pass_save);
+
+    printf("done!\n");
+}
+
 int pass_save(char *s_p1, char *s_p2){
 	char pass_choice;
 	char pass_file_name[30];
