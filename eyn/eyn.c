@@ -87,9 +87,12 @@ void pass_save_md(char fname[30], int p1, int p2){
 	printf("done!\n");
 }
 
-int pass_save(int p1,int p2){
+int pass_save(char *s_p1, char *s_p2){
 	char pass_choice;
 	char pass_file_name[30];
+
+    int p1 = atoi(s_p1);
+    int p2 = atoi(s_p2);
 
 	printf("for save password to a file enter 1\n");
 	printf("for save password as html file enter 2\n");
@@ -117,7 +120,7 @@ int pass_save(int p1,int p2){
 		return 0;
 	}else{
 		printf("invalid option, please enter again!\n");
-		pass_save(p1, p2);
+		pass_save(s_p1, s_p2);
 	}
 }
 
@@ -335,7 +338,7 @@ int main(int argc, char** argv){
 		return 0;
 	}
 
-	pass_save(key1, key2);
+    pass_save(s_key1, s_key2);
 
 	char menu[4];
 
