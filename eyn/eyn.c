@@ -157,6 +157,12 @@ int main(int argc, char** argv){
     char s_key1[30];
     char s_key2[30];
 
+    char s_import_pass[30];
+    char import_pass_choice[5];
+    char import_file_name[30];
+
+    int import_pass;
+
 	int argv_value[3];
 
     char txt_out[30];
@@ -289,6 +295,28 @@ int main(int argc, char** argv){
     		system("clear");
             goto export;
     	}
+    }
+
+    printf("did you want to import your password in .key format(y/n):");
+    scanf("%s", &import_pass_choice);
+
+    if(! strcmp(import_pass_choice, "yes") || import_pass_choice[0] == 'y'){
+        FILE *import;
+
+        printf("enter your file name:");
+        scanf("%s", &import_file_name);
+
+        import = fopen(import_file_name, "rb");
+
+        fscanf(import, "%s\n", s_key1);
+        fscanf(import, "%s", s_key2);
+
+        key1 = atoi(s_key1);
+        key2 = atoi(s_key2);
+
+        fclose(import);
+
+        goto encrypt;
     }
 
 	/*printf("how many keys (passwords) you want to set:");
