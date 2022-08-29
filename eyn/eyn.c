@@ -297,16 +297,23 @@ int main(int argc, char** argv){
     	}
     }
 
+    error_import_pass:
+
     printf("did you want to import your password in .key format(y/n):");
     scanf("%s", &import_pass_choice);
 
     if(! strcmp(import_pass_choice, "yes") || import_pass_choice[0] == 'y'){
         FILE *import;
 
-        printf("enter your file name:");
+        printf("enter password file you want to import:");
         scanf("%s", &import_file_name);
 
         import = fopen(import_file_name, "rb");
+
+        if(!import){
+            printf("the file is not valid!\n");
+            goto error_import_pass;
+        }
 
         fscanf(import, "%s\n", s_key1);
         fscanf(import, "%s", s_key2);
