@@ -20,3 +20,4 @@
 * for html format you can use -html_o and the file name.
 * and for md(markdown) format you can use -md_o and after the file name.
 * example: ./eyn -fname_in file.txt -fname_out file.txt -key1 10 -key2 20 -html_o h.html -md_o md.md -txt_o txt.txt
+* you can use -key command to save password in key format, and another time you can import it to the program.
