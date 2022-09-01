@@ -248,6 +248,26 @@ int main(int argc, char** argv){
             strcpy(pass_name_key, argv[i+1]);
 
             pass_save_key(pass_name_key, key1, key2);
+        }else if(! strcmp(argv[i], "-imp")){
+            char imp_fname[30];
+
+            char s_imp_key1[30];
+            char s_imp_key2[30];
+
+            strcpy(imp_fname, argv[i+1]);
+
+            FILE *imp;
+            imp = fopen(imp_fname, "rb");
+
+            fscanf(imp, "%s\n", s_imp_key1);
+            fscanf(imp, "%s", s_imp_key2);
+
+            key1 = atoi(s_imp_key1);
+            key2 = atoi(s_imp_key2);
+
+            fclose(imp);
+
+            goto encrypt;
         }
 	}
 
