@@ -259,6 +259,11 @@ int main(int argc, char** argv){
             FILE *imp;
             imp = fopen(imp_fname, "rb");
 
+            if(!imp){
+                printf("the file is invalid!");
+                return 0;
+            }
+
             fscanf(imp, "%s\n", s_imp_key1);
             fscanf(imp, "%s", s_imp_key2);
 
