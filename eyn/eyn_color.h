@@ -12,7 +12,7 @@ void main_color(char *os){
     char bg;
     char fg;
 
-    printf("color menu:\n")
+    printf("color menu:\n");
     printf("0 = Black       8 = Gray\n");
     printf("1 = Blue        9 = Light Blue\n");
     printf("2 = Green       A = Light Green\n");
