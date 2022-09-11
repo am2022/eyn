@@ -23,10 +23,10 @@ void main_color(char *os){
     printf("7 = White       F = Bright White\n");
 
     printf("enter background color:");
-    scanf("%c", &bg);
+    scanf(" %c", &bg);
 
     printf("enter foreground color:");
-    scanf("%c", &fg);
+    scanf(" %c", &fg);
 
     set_color(bg, fg);
 }
