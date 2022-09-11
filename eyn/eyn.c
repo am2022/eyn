@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "eyn_time.h"
 #include "help.h"
+#include "eyn_color.h"
 
 #define MAX_SIZE (1024*1024*5)
 
@@ -286,7 +287,7 @@ int main(int argc, char** argv){
 
     printf("date: %d / %d / %d\n", e_month, e_day, e_year);
 
-	printf("enter -q for exit || enter -clear for clear the screen\n");
+	printf("enter -q for exit || enter -clear for clear the screen || -color for change color\n");
 	printf("enter the file name that you want to encrypt:");
 	scanf("%s", &fname_in);
 
@@ -300,6 +301,10 @@ int main(int argc, char** argv){
     		system("clear");
     		goto mainfunc;
     	}
+    }else if(! strcmp(fname_in, "-color")){
+        if(! strcmp(PLATFORM, "win")){
+            main_color("win");
+        }
     }
 
 	valid_file = fopen(fname_in, "rb");
