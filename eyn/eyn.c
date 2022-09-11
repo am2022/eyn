@@ -304,6 +304,8 @@ int main(int argc, char** argv){
     }else if(! strcmp(fname_in, "-color")){
         if(! strcmp(PLATFORM, "win")){
             main_color("win");
+            system("clear");
+            goto mainfunc;
         }
     }
 
