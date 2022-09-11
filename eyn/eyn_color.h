@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+void set_color(char bg, char fg){
+    char out[10];
+
+    sprintf(out, "color %c%c", bg, fg);
+
+    system(out);
+}
+
 void main_color(char *os){
     char bg;
     char fg;
@@ -19,4 +27,6 @@ void main_color(char *os){
 
     printf("enter foreground color:");
     scanf("%c", &fg);
+
+    set_color(bg, fg);
 }
