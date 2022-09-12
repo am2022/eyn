@@ -11,6 +11,7 @@ void set_color(char bg, char fg){
 void main_color(char *os){
     char bg;
     char fg;
+    char colors[] = "0123456789ABCDEF";
 
     printf("color menu:\n");
     printf("0 = Black       8 = Gray\n");
@@ -27,6 +28,33 @@ void main_color(char *os){
 
     printf("enter foreground color:");
     scanf(" %c", &fg);
+
+    int flag = 0;
+    int flag2 = 0;
+
+    for(int i = 0;i <= sizeof(colors);i++){
+        if(bg == colors[i]){
+            flag = 1;
+            break;
+        }
+    }
+
+    if(flag == 0){
+        printf("incorrect input!\n");
+        return;
+    }
+
+    for(int i = 0;i <= sizeof(colors);i++){
+        if(fg == colors[i]){
+            flag2 = 1;
+            break;
+        }
+    }
+
+    if(flag2 == 0){
+        printf("incorrect input!\n");
+        return;
+    }
 
     set_color(bg, fg);
 }
