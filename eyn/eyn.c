@@ -285,6 +285,14 @@ int main(int argc, char** argv){
 
 	mainfunc:
 
+    if(! strcmp(PLATFORM, "win")){
+        system("cls");
+    }else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
+        system("cls");
+    }else{
+        system("cls");
+    }
+
     printf("date: %d / %d / %d\n", e_month, e_day, e_year);
 
 	printf("enter -q for exit || enter -clear for clear the screen || -color for change color\n");
