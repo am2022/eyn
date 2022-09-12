@@ -245,7 +245,7 @@ int main(int argc, char** argv){
         }else if(! strcmp(argv[i], "--help") || ! strcmp(argv[i], "-help") || ! strcmp(argv[i], "-h")){
             argv_help();
             return 0;
-        }else if(! strcmp(argv[i], "-key")){
+        }else if(! strcmp(argv[i], "-key") || ! strcmp(argv[i], "-k")){
             strcpy(pass_name_key, argv[i+1]);
 
             pass_save_key(pass_name_key, key1, key2);
