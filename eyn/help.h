@@ -8,7 +8,7 @@ void argv_help(){
     printf("-txt_o for save passwords in txt format\n");
     printf("-md_o for save passwords in md format\n");
     printf("-html_o for save passwords in html format\n");
-    printf("-key for save passwords in key format\n");
+    printf("-key or -k for save passwords in key format\n");
     printf("-imp for import key file to program\n");
     printf("--help or -h or -help for help\n");
 }
