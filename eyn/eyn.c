@@ -318,6 +318,10 @@ int main(int argc, char** argv){
             printf("we don't have this option for linux and osx for now");
             system("clear");
             goto mainfunc;
+        }else{
+            printf("your os was not detected!");
+            system("clear");
+            goto mainfunc;
         }
     }
 
