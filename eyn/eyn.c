@@ -288,9 +288,9 @@ int main(int argc, char** argv){
     if(! strcmp(PLATFORM, "win")){
         system("cls");
     }else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
-        system("cls");
+        system("clear");
     }else{
-        system("cls");
+        system("clear");
     }
 
     printf("date: %d / %d / %d\n", e_month, e_day, e_year);
