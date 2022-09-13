@@ -314,6 +314,10 @@ int main(int argc, char** argv){
             main_color("win");
             system("cls");
             goto mainfunc;
+        }else if(! strcmp(PLATFORM, "linux") || ! strcmp(PLATFORM, "unix")){
+            printf("we don't have this option for linux and osx for now");
+            system("clear");
+            goto mainfunc;
         }
     }
 
