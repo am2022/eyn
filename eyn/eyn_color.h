@@ -12,7 +12,7 @@ void main_color(char *os){
     if(! strcmp(os, "win")){
         char bg;
         char fg;
-        char colors[] = "0123456789ABCDEF";
+        char colors[] = "0123456789ABCDEFabcdef";
 
         printf("color menu:\n");
         printf("0 = Black       8 = Gray\n");
