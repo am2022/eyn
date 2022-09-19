@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <conio.h>
 #include "eyn_time.h"
 #include "help.h"
 #include "eyn_color.h"
@@ -462,6 +463,8 @@ int main(int argc, char** argv){
 		return 0;
 	}else{
 		printf("invalid option, enter again!\n");
+        printf("enter a key for continue");
+        getch();
 		goto error_menu;
 	}
 	return 0;
