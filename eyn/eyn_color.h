@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <conio.h>
 
 void set_color(char bg, char fg){
     char out[10];
@@ -42,6 +43,8 @@ void main_color(char *os){
 
         if(flag == 0){
             printf("incorrect input!\n");
+            printf("enter a key for continue");
+            getch();
             return;
         }
 
@@ -54,6 +57,8 @@ void main_color(char *os){
 
         if(flag2 == 0){
             printf("incorrect input!\n");
+            printf("enter a key for continue");
+            getch();
             return;
         }
 
