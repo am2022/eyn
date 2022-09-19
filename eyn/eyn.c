@@ -463,7 +463,7 @@ int main(int argc, char** argv){
 		return 0;
 	}else{
 		printf("invalid option, enter again!\n");
-        printf("enter a key for continue");
+        printf("enter a key for continue\n");
         getch();
 		goto error_menu;
 	}
