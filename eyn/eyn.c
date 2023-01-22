@@ -5,6 +5,7 @@
 #include "eyn_time.h"
 #include "help.h"
 #include "eyn_color.h"
+#include "pass_save.h"
 
 #define MAX_SIZE (1024*1024*5)
 
