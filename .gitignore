@@ -33,3 +33,6 @@
 *.exe
 *.out
 *.app
+
+# Vim swp file
+*.swp
