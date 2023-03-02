@@ -334,7 +334,6 @@ int main(int argc, char** argv){
 	}else{
 		printf("invalid option, enter again!\n");
         printf("enter a key for continue\n");
-        getch();
 		goto error_menu;
 	}
 	return 0;
