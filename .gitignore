@@ -28,3 +28,8 @@
 
 # Cpp config for vscode
 /.vscode/c_cpp_properties.json
+
+# Executables
+*.exe
+*.out
+*.app
