@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <conio.h>
 #include "eyn_time.h"
 #include "help.h"
 #include "eyn_color.h"
