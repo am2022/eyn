@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "eyn_time.h"
 
 void pass_save_txt(char fname[30], int p1, int p2){
     int e_year;
