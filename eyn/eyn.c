@@ -165,6 +165,8 @@ int main(int argc, char** argv){
         system("clear");
     }
 
+    ascii_art();
+
     printf("date: %d / %d / %d\n", e_month, e_day, e_year);
 
 	printf("enter -q for exit || enter -clear for clear the screen || -color for change color\n");
