@@ -5,6 +5,7 @@
 #include "help.h"
 #include "eyn_color.h"
 #include "pass_save.h"
+#include "ascii_art.h"
 
 #define MAX_SIZE (1024*1024*50)
 
