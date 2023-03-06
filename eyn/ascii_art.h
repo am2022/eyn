@@ -1,11 +1,11 @@
-#include <iostream>
+#include <stdio.h>
 using namespace std;
 
 void ascii_art(){
-    cout<<"   ___ _   _ _ __\n";
-    cout<<"  / _ \\ | | | '_ \\\n";
-    cout<<" |  __/ |_| | | | |\n";
-    cout<<"  \\___|\\__, |_| |_|\n";
-    cout<<"        __/ |\n";
-    cout<<"       |___/\n";
+    printf("   ___ _   _ _ __\n");
+    printf("  / _ \\ | | | '_ \\\n");
+    printf(" |  __/ |_| | | | |\n");
+    printf("  \\___|\\__, |_| |_|\n");
+    printf("        __/ |\n");
+    printf("       |___/\n");
 }
