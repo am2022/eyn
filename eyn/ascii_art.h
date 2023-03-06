@@ -1,5 +1,4 @@
 #include <stdio.h>
-using namespace std;
 
 void ascii_art(){
     printf("   ___ _   _ _ __\n");
